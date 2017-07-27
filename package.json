@@ -1,0 +1,20 @@
+{
+  "name": "java-script-note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "start": "gitbook serve ./content ./gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weihui5289/java-script-note.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weihui5289/java-script-note/issues"
+  },
+  "homepage": "https://github.com/weihui5289/java-script-note#readme"
+}
