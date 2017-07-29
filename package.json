@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "start": "gitbook serve ./content ./gh-pages"
+   "start": "gitbook serve ./content ./gh-pages",
+   "deploy": "node ./scripts/deploy-gh-pages.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/weihui5289/java-script-note/issues"
   },
-  "homepage": "https://github.com/weihui5289/java-script-note#readme"
+  "homepage": "https://github.com/weihui5289/java-script-note#readme",
+  "dependencies": {
+    "gh-pages": "^1.0.0"
+  }
 }
