@@ -6,4 +6,11 @@
   * [第三节:在 JavaScript对象是拥有属性和方法的数据](./js/4-state.md)
   * [第四节:字符串对象用于处理已有的字符块](./js/5-state.md)
   * [第五节:JavaScript Date日期对象](./js/6-state.md)
-* [第二章：知识点的汇总](./js/last-state.md)
+  * [第六节:JavaScript Array数组](./js/7-state.md)
+  * [第七节:JavaScript Boolean（逻辑）对象](./js/8-state.md)
+  * [第八节：JavaScript Math（算数）对象](./js/9-state.md)
+  * [第九节：JavaScript RegExp 对象](./js/10-state.md)
+* [第二章：判断语句（if...else）]
+  * [第一节：判断语句](./if/1-part.md)
+  * [第二节：JavaScript For 循环](./if/2-part.md)
+* [第三章：知识点的汇总](./js/last-state.md)
