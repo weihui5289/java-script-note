@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第一节:JavaScript变量 · GitBook</title>
+        <title>第九节：JavaScript RegExp 对象 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3-state.html" />
     
-    
-    <link rel="prev" href="1-state.html" />
+    <link rel="prev" href="9-state.html" />
     
 
     </head>
@@ -116,7 +114,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="2-state.html">
+        <li class="chapter " data-level="1.2.1" data-path="2-state.html">
             
                 <a href="2-state.html">
             
@@ -220,7 +218,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="10-state.html">
+        <li class="chapter active" data-level="1.2.9" data-path="10-state.html">
             
                 <a href="10-state.html">
             
@@ -326,7 +324,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第一节:JavaScript变量</a>
+        <a href=".." >第九节：JavaScript RegExp 对象</a>
     </h1>
 </div>
 
@@ -341,48 +339,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="javascript&#x53D8;&#x91CF;">JavaScript&#x53D8;&#x91CF;</h3>
-<ul>
-<li>&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;
-JavaScript &#x53D8;&#x91CF;
-&#x4E0E;&#x4EE3;&#x6570;&#x4E00;&#x6837;&#xFF0C;JavaScript &#x53D8;&#x91CF;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x503C;&#xFF08;&#x6BD4;&#x5982; x=2&#xFF09;&#x548C;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;&#x6BD4;&#x5982; z=x+y&#xFF09;&#x3002;</li>
-<li>&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x77ED;&#x540D;&#x79F0;&#xFF08;&#x6BD4;&#x5982; x &#x548C; y&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x63CF;&#x8FF0;&#x6027;&#x66F4;&#x597D;&#x7684;&#x540D;&#x79F0;&#xFF08;&#x6BD4;&#x5982; age, sum, totalvolume&#xFF09;&#x3002;</li>
-<li>&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x4EE5;&#x5B57;&#x6BCD;&#x5F00;&#x5934;</li>
-<li>&#x53D8;&#x91CF;&#x4E5F;&#x80FD;&#x4EE5; $ &#x548C; _ &#x7B26;&#x53F7;&#x5F00;&#x5934;&#xFF08;&#x4E0D;&#x8FC7;&#x6211;&#x4EEC;&#x4E0D;&#x63A8;&#x8350;&#x8FD9;&#x4E48;&#x505A;&#xFF09;</li>
-<li>&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x5BF9;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#xFF08;y &#x548C; Y &#x662F;&#x4E0D;&#x540C;&#x7684;&#x53D8;&#x91CF;&#xFF09;</li>
-<li>&#x63D0;&#x793A;&#xFF1A;JavaScript &#x8BED;&#x53E5;&#x548C; JavaScript &#x53D8;&#x91CF;&#x90FD;&#x5BF9;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#x3002;</li>
-</ul>
-<ul>
-<li>&#x7533;&#x660E;&#x6216;&#x521B;&#x5EFA;&#x53D8;&#x91CF;
-```js<script language="javascript" type="text/javascript">
- var i=123;//使用var关键字申明变量  
- var s="李志伟";
-temp="直接赋值使用变量";
-//如果您所赋值的变量还未进行过声明，该变量会自动声明。
- document.write(i+" "+s+" "+temp);
-</script>
+                                <h3 id="javascript-regexp-&#x5BF9;&#x8C61;">JavaScript RegExp &#x5BF9;&#x8C61;</h3>
+<p>&#x4EC0;&#x4E48;&#x662F; RegExp&#xFF1F;
+RegExp &#x662F;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7F29;&#x5199;&#x3002;
+&#x5F53;&#x60A8;&#x68C0;&#x7D22;&#x67D0;&#x4E2A;&#x6587;&#x672C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;&#x6765;&#x63CF;&#x8FF0;&#x8981;&#x68C0;&#x7D22;&#x7684;&#x5185;&#x5BB9;&#x3002;RegExp &#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x3002;
+&#x7B80;&#x5355;&#x7684;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5B57;&#x7B26;&#x3002;
+&#x66F4;&#x590D;&#x6742;&#x7684;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x53EF;&#x7528;&#x4E8E;&#x89E3;&#x6790;&#x3001;&#x683C;&#x5F0F;&#x68C0;&#x67E5;&#x3001;&#x66FF;&#x6362;&#x7B49;&#x7B49;&#x3002;
+&#x60A8;&#x53EF;&#x4EE5;&#x89C4;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x68C0;&#x7D22;&#x4F4D;&#x7F6E;&#xFF0C;&#x4EE5;&#x53CA;&#x8981;&#x68C0;&#x7D22;&#x7684;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x5B9A;&#x4E49; RegExp
+RegExp &#x5BF9;&#x8C61;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x68C0;&#x7D22;&#x6A21;&#x5F0F;&#x3002;
+&#x901A;&#x8FC7; new &#x5173;&#x952E;&#x8BCD;&#x6765;&#x5B9A;&#x4E49; RegExp &#x5BF9;&#x8C61;&#x3002;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86;&#x540D;&#x4E3A; patt1 &#x7684; RegExp &#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x6A21;&#x5F0F;&#x662F; &quot;e&quot;&#xFF1A;</p>
+<ol>
+<li><p>RegExp &#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;
+RegExp &#x5BF9;&#x8C61;&#x6709; 3 &#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;test()&#x3001;exec() &#x4EE5;&#x53CA; compile()&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> patt1=<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;e&quot;</span>);
 
+<span class="hljs-built_in">document</span>.write(patt1.test(<span class="hljs-string">&quot;The best things in life are free&quot;</span>));
+</code></pre>
 </li>
-</ul>
-<pre><code>* &#x91CD;&#x65B0;&#x7533;&#x660E;&#x53D8;&#x91CF;
-```js
-&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
- var i=123;//&#x4F7F;&#x7528;var&#x5173;&#x952E;&#x5B57;&#x7533;&#x660E;&#x53D8;&#x91CF;  
- var i;//&#x5728;&#x91CD;&#x65B0;&#x58F0;&#x660E;&#x8BE5;&#x53D8;&#x91CF;&#x540E;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4E0D;&#x4F1A;&#x88AB;&#x91CD;&#x7F6E;&#x6216;&#x6E05;&#x9664;
- document.write(&quot;i&#x7684;&#x503C;&#x662F;:&quot;+i);//i&#x7684;&#x503C;&#x8FD8;&#x662F;123
-&lt;/script&gt;
-</code></pre><p>JavaScript &#x6570;&#x636E;&#x7C7B;&#x578B;
-JavaScript &#x53D8;&#x91CF;&#x8FD8;&#x80FD;&#x4FDD;&#x5B58;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;&#x6587;&#x672C;&#x503C; (name=&quot;Bill Gates&quot;)&#x3002;
-&#x5728; JavaScript &#x4E2D;&#xFF0C;&#x7C7B;&#x4F3C; &quot;Bill Gates&quot; &#x8FD9;&#x6837;&#x4E00;&#x6761;&#x6587;&#x672C;&#x88AB;&#x79F0;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;
-JavaScript &#x53D8;&#x91CF;&#x6709;&#x5F88;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5173;&#x6CE8;&#x6570;&#x5B57;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> pi=<span class="hljs-number">3.14</span>;
-<span class="hljs-keyword">var</span> name=<span class="hljs-string">&quot;Bill Gates&quot;</span>;
-<span class="hljs-keyword">var</span> answer=<span class="hljs-string">&apos;Yes I am!&apos;</span>;
+<li><p>exec()
+exec() &#x65B9;&#x6CD5;&#x68C0;&#x7D22;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x503C;&#x3002;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x88AB;&#x627E;&#x5230;&#x7684;&#x503C;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x5339;&#x914D;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> patt1=<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;e&quot;</span>);
+
+<span class="hljs-built_in">document</span>.write(patt1.exec(<span class="hljs-string">&quot;The best things in life are free&quot;</span>));
 </code></pre>
-<p>&#x4E00;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x591A;&#x4E2A;&#x53D8;&#x91CF;
-&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x4E2D;&#x58F0;&#x660E;&#x5F88;&#x591A;&#x53D8;&#x91CF;&#x3002;&#x8BE5;&#x8BED;&#x53E5;&#x4EE5; var &#x5F00;&#x5934;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#x53D8;&#x91CF;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> name=<span class="hljs-string">&quot;Gates&quot;</span>, age=<span class="hljs-number">56</span>, job=<span class="hljs-string">&quot;CEO&quot;</span>;
-</code></pre>
+<ol>
+<li>compile()
+compile() &#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x6539;&#x53D8; RegExp&#x3002;
+compile() &#x65E2;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x68C0;&#x7D22;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x3002;</li>
+</ol>
 
                                 
                                 </section>
@@ -410,14 +397,10 @@ JavaScript &#x53D8;&#x91CF;&#x6709;&#x5F88;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF
 
             
                 
-                <a href="1-state.html" class="navigation navigation-prev " aria-label="Previous page: 第一章:了解JavaScript">
+                <a href="9-state.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第八节：JavaScript Math（算数）对象">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="3-state.html" class="navigation navigation-next " aria-label="Next page: 第二节:JavaScript数据类型">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -426,7 +409,7 @@ JavaScript &#x53D8;&#x91CF;&#x6709;&#x5F88;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一节:JavaScript变量","level":"1.2.1","depth":2,"next":{"title":"第二节:JavaScript数据类型","level":"1.2.2","depth":2,"path":"js/3-state.md","ref":"./js/3-state.md","articles":[]},"previous":{"title":"第一章:了解JavaScript","level":"1.2","depth":1,"path":"js/1-state.md","ref":"./js/1-state.md","articles":[{"title":"第一节:JavaScript变量","level":"1.2.1","depth":2,"path":"js/2-state.md","ref":"./js/2-state.md","articles":[]},{"title":"第二节:JavaScript数据类型","level":"1.2.2","depth":2,"path":"js/3-state.md","ref":"./js/3-state.md","articles":[]},{"title":"第三节:在 JavaScript对象是拥有属性和方法的数据","level":"1.2.3","depth":2,"path":"js/4-state.md","ref":"./js/4-state.md","articles":[]},{"title":"第四节:字符串对象用于处理已有的字符块","level":"1.2.4","depth":2,"path":"js/5-state.md","ref":"./js/5-state.md","articles":[]},{"title":"第五节:JavaScript Date日期对象","level":"1.2.5","depth":2,"path":"js/6-state.md","ref":"./js/6-state.md","articles":[]},{"title":"第六节:JavaScript Array数组","level":"1.2.6","depth":2,"path":"js/7-state.md","ref":"./js/7-state.md","articles":[]},{"title":"第七节:JavaScript Boolean（逻辑）对象","level":"1.2.7","depth":2,"path":"js/8-state.md","ref":"./js/8-state.md","articles":[]},{"title":"第八节：JavaScript Math（算数）对象","level":"1.2.8","depth":2,"path":"js/9-state.md","ref":"./js/9-state.md","articles":[]},{"title":"第九节：JavaScript RegExp 对象","level":"1.2.9","depth":2,"path":"js/10-state.md","ref":"./js/10-state.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/2-state.md","mtime":"2017-07-29T12:32:46.854Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-30T09:16:43.569Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第九节：JavaScript RegExp 对象","level":"1.2.9","depth":2,"next":{"title":"[第二章：判断语句（if...else）]","level":"1.3","depth":1,"ref":"","articles":[{"title":"第一节：判断语句","level":"1.3.1","depth":2,"path":"if/1-part.md","ref":"./if/1-part.md","articles":[]},{"title":"第二节：JavaScript For 循环","level":"1.3.2","depth":2,"path":"if/2-part.md","ref":"./if/2-part.md","articles":[]}]},"previous":{"title":"第八节：JavaScript Math（算数）对象","level":"1.2.8","depth":2,"path":"js/9-state.md","ref":"./js/9-state.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js/10-state.md","mtime":"2017-07-30T08:12:52.843Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-30T09:16:43.569Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
