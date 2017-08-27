@@ -8,7 +8,7 @@ JavaScript 变量
 - 变量必须以字母开头
 - 变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）
 - 变量名称对大小写敏感（y 和 Y 是不同的变量）
-- 提示：JavaScript 语句和 JavaScript 变量都对大小写敏感。
+- 提示：JavaScript 语句和 JavaScript 变量都对大小写敏感。...
 
 
 

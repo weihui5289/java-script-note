@@ -12,5 +12,5 @@
   * [第九节：JavaScript RegExp 对象](./js/10-state.md)
 * [第二章：判断语句（if...else）]
   * [第一节：判断语句](./if/1-part.md)
-  * [第二节：JavaScript For 循环](./if/2-part.md)
+  * [第二节：JavaScript For 循环](./if/2-pard.md)
 * [第三章：知识点的汇总](./js/last-state.md)
